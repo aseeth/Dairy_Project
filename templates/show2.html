@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Milk_List</title>
+</head>
+
+<table border="1" align="center" bgcolor="#faebd7">
+    <tr>
+        <th>Date</th><th>Farmer Id</th><th>Farmer Name</th><th>Milk.L</th><th>Fat</th><th>Rate</th><th>Total.Amt</th>
+    </tr>
+    {% for rec in recs %}
+    <tr>
+        <td>{{ rec.date }}</td>
+        <td align="center">{{ rec.fid_id }}</td>
+        <td>{{ rec.fname }}</td>
+        <td>{{ rec.milkqty }}</td>
+        <td>{{ rec.fat }}</td>
+        <td>{{ rec.rate }}</td>
+        <td>{{ rec.totalamt }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/managemilk/">GoBack</a><br><br>
+<a href="/edit_milk/">Edit Milk</a>
+</body>
+</html>

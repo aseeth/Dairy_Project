@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter_Milk</title>
+</head>
+
+<body bgcolor="#f0ffff">
+{% load  static %}
+<script src="{% static  "JS/dairy.js" %}" ></script>
+
+<form method="post" action="/ins/" align="center">
+     {% csrf_token %}
+    Date : <br>
+    <input type = text name = "date" id="date" value="2018-4-6"><br><br><br>
+    FarmerId:<br>
+    <input type = text name = "fid" id="fid" ><br><br><br>
+
+    Milk Type:<br>
+    <input type="radio" name="gender" value="bmilk" checked> BM<br>
+    <input type="radio" name="gender" value="cmilk"> CM<br><br><br>
+
+    MilkinLtr:<br>
+    <input type = text name = "milkqty" id="milkqty"><br><br><br>
+    Fat:<br>
+    <input type = text name = "fat" id="fat"><br><br><br>
+    Rate:<br>
+    <input type = text name = "rate"  id="rate" value="50"><br><br><br>
+    TotalAmt:<br>
+    <input type = text name = "totalamt" id="totalamt" onfocus="tamt1()"><br><br><br>
+
+    <input type= "submit" value="save"><br><br>
+
+    <a href="/s_milk/">Milk_List</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/Dairy/">Home</a>
+</form>
+
+<h1>{{ success_msg }}</h1>
+
+</body>
+</html>

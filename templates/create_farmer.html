@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create_Farmer</title>
+</head>
+<style>
+    {% load  static %}
+
+    body {
+        background-image: url("{% static  "photos/farmer.jpg" %}");
+    }
+</style>
+<h1 align="center" style="color:red">Create NewFarmer</h1>
+<body bgcolor="#ffffe0">
+{% load  static %}
+<script src="{% static  "JS/dairy.js" %}" ></script>
+<form id='abc' method="POST" action="/insert/">
+    {% csrf_token %}
+
+    Farmer ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="fid" name="fid"><br><br>
+    Farmer Name:<input type="text" id="fname" name="fname"><br><br><br>
+    <input type="submit" onclick="validateId()" value="save">&nbsp;&nbsp;&nbsp;
+    <a href="/dairy/">Home</a>&nbsp;&nbsp;
+    <a href="/flist/">FarmersList</a>
+
+</form>
+
+<h1>{{ fail_msg }}</h1>
+<h1>{{ success_msg }}</h1>
+{% for k,v in d.items %}
+    {{ k }}:{{ v }}
+{% endfor %}
+</body>
+</html>

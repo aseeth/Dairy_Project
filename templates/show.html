@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmers_List</title>
+</head>
+<body bgcolor="#f0ffff">
+<table border="1" align="center" bgcolor="#faebd7">
+    <tr>
+        <th>Farmer Id</th><th>Farmer Name</th>
+    </tr>
+    {% for rec in recs %}
+    <tr>
+         <td><input type="checkbox" name="fid" value="fname"> {{ rec.fid }} </td>
+        <td>{{ rec.fname }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/createfarmer/">GoBack</a><br>
+<a href="/delete/">Delete Farmer</a>
+</body>
+</html>

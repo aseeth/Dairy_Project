@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+
+<h1>Wel Come to My page</h1>
+
+<form action="/print/" method="post">
+    {% csrf_token %}
+Enter the num:<input type="text" name="num"  id="num">
+    <input type="submit" value="submit">
+</form><br><br>
+{{ d }}<br><br>
+
+<h5>Enter DOB Below</h5>
+
+
+{% load static %}
+<script src="{% static "JS/dairy.js" %}"></script>
+
+<form action="/dob/" method="post" id="cde">
+    {% csrf_token %}
+    Day:<input type="text" name="day" id="day">
+    Month:<input type="text" name="month" id="month">
+    Year:<input type="text" name="year" id="year"><br><br>
+    <input type="submit" value="Check age" >
+</form>
+
+<a href="/hhhh/">Home</a>
+<br>
+
+<h1>{{ db }}</h1>
+<h3>{{ o }}</h3>
+</body>
+</html>
